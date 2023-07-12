@@ -6,14 +6,14 @@
 /*   By: bfranco <bfranco@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/29 14:20:12 by bfranco       #+#    #+#                 */
-/*   Updated: 2023/03/10 15:42:59 by bfranco       ########   odam.nl         */
+/*   Updated: 2023/07/12 13:09:45 by bfranco       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PS_H
 # define PS_H
 
-# include <libft.h>
+# include "libft.h"
 # include <limits.h>
 
 typedef struct s_stack

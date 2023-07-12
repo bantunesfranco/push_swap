@@ -10,7 +10,7 @@ CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
 NAME = push_swap
 NAME_B = checker
-INC = ps.h\
+INCS = -I incs -I libft/incs 
 
 SOURCES = main.c\
 	parser.c\
@@ -36,23 +36,22 @@ SRCS_B = ${addprefix ${DIR_B}/,${SOURCES_B}}
 
 DIR_S = srcs
 DIR_B = bonus
-DIR_I = incs
 
 ${NAME}: ${SRCS}
 	@make -s -C libft
 	@echo "${BLUE}Compiling ${NAME}${END}"
-	@CC ${CFLAGS} ${SRCS} ${LIBFT} -I ${DIR_I} -o ${NAME}
+	@CC ${CFLAGS} ${SRCS} ${LIBFT} ${INCS} -o ${NAME}
 	@echo "${GREEN}Done!${END}"
 
 test:
 	@make -s -C libft
 	@echo "${YELLOW}Testing ${NAME}${END}"
-	@${CC} ${CFLAGS} -fsanitize=address ${SRCS} ${LIBFT} -I ${DIR_I} -o ${NAME}
+	@${CC} ${CFLAGS} -fsanitize=address ${SRCS} ${LIBFT} ${INCS} -o ${NAME}
 	@echo "${GREEN}Done!${END}"
 
 ${NAME_B}: ${NAME} ${SRCS_B} 
 	@echo "${BLUE}Compiling ${NAME_B}${END}"
-	@${CC} ${CFLAGS} ${SRCS_B} ${LIBFT} -I ${DIR_I} -o ${NAME_B}
+	@${CC} ${CFLAGS} ${SRCS_B} ${LIBFT} ${INCS} -o ${NAME_B}
 	@echo "${GREEN}Done!${END}"
 
 bonus : ${NAME_B}
